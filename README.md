@@ -10,4 +10,4 @@ All the tests will run automatically when the HTML file is loaded in the browser
 
 Clone or download the project from here: https://github.com/wjohnson777/feed-reader-testing
 
-Run the **index.html** file in a browser window.
+Run the **(index.html)** file in a browser window.

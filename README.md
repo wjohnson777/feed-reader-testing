@@ -8,5 +8,5 @@ All the tests will run automatically when the HTML file is loaded in the browser
 
 ### Instructions
 
-Load Jasmine test program by clicking here: https://rawgit.com/wjohnson777/test-build/master/index.html
+Load Jasmine test program by clicking here: https://rawgit.com/wjohnson777/feed-reader-testing/master/index.html
 

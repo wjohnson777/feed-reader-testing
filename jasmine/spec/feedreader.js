@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('is defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -36,7 +36,7 @@ $(function() {
 				URL = feed.url;
 				expect(URL).toBeDefined();
 				expect(URL.length).not.toBe(0);
-			}
+			})
 		});
 
         /* TODO: Write a test that loops through each feed
@@ -54,15 +54,15 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
-	describe('menu', function() {
+	describe('The Menu', function() {
 		
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-		it('hidden menu', function() {
-			expect($('menu-hidden').is(':visable')).toBe(true);
+		it('is hidden by default', function() {
+			expect($('body').hasClass('menu-hidden')).toBe(true);
 		});
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -70,11 +70,10 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 		it('visibility changes on click', function() {
-			var menu = $('menu-icon-link');
-			menu.click();
-			expect($('body').hasClass('menu-icon-link')).toBe(false);
-			menu.click();
-			expect($('body').hasClass('menu-icon-link')).toBe(true);
+			$('.menu-icon-link').click();
+			expect($('body').hasClass('menu-hidden')).toEqual(false);
+			$('.menu-icon-link').click();
+			expect($('body').hasClass('menu-hidden')).toEqual(true);
 		});
 	});
 
@@ -109,14 +108,18 @@ $(function() {
 		 beforeEach(function(done) {
 			 loadFeed(0, function() {
 				 lastFeed = $('.feed').html();
+				 loadFeed(1, function() {
+					 nextFeed = $('.feed').html();
 				 done();
+				 });
 			 });
 		 });
 		 
-		 it('should change content when new feed is loaded', function(done) {
+		 it('content changes when new feed is loaded', function(done) {
 			 loadFeed(1, function() {
-				 nextFeed = $('.feed').not.toEqual(lastFeed);
+				 expect(nextFeed).not.toEqual(lastFeed);
 				 done();
 			 });
 		 });
+	});	 
 }());

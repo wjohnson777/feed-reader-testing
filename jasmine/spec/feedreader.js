@@ -21,6 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+		 
 		 // verifies the variable is defined and not empty
         it('is defined', function() {
             expect(allFeeds).toBeDefined();
@@ -32,6 +33,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+		 
 		 // verifies that the URL is defined and not empty
 		it('has URL defined', function() {
 			allFeeds.forEach(function(feed) {
@@ -46,6 +48,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+		 
 		 // verifies that the name is defined and not empty
 		 it('has Name defined', function() {
 			 allFeeds.forEach(function(feed) {
@@ -66,6 +69,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+		 
 		it('is hidden by default', function() {
 			expect($('body').hasClass('menu-hidden')).toBe(true);   // checks if menu is hidden by default
 		});
@@ -74,6 +78,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+		  
 		it('visibility changes on click', function() {
 			$('.menu-icon-link').click();
 			expect($('body').hasClass('menu-hidden')).toEqual(false);   // checks if menu displays on click
@@ -91,6 +96,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+		 
 		beforeEach(function(done) {
 			loadFeed(0, done);
 		});
@@ -107,6 +113,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+		 
 		 var lastFeed;
 		 var nextFeed;
 		 
